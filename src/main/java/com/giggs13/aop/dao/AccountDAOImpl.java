@@ -3,6 +3,9 @@ package com.giggs13.aop.dao;
 import com.giggs13.aop.entity.Account;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Repository("accountDAOImpl")
 public class AccountDAOImpl
         implements AccountDAO {
@@ -42,5 +45,16 @@ public class AccountDAOImpl
         System.out.println(getClass() + ": DOING MY WORK");
 
         return true;
+    }
+
+    @Override
+    public List<Account> findAccounts() {
+        List<Account> accounts = new ArrayList<>();
+        accounts.add(new Account("John", "Silver"));
+        accounts.add(new Account("Madhu", "Platinum"));
+        accounts.add(new Account("Luca", "Gold"));
+        accounts.add(new Account(null, "Brilliant"));
+
+        return accounts;
     }
 }

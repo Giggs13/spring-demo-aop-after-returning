@@ -1,3 +1,4 @@
 /.idea/
 /target/
 /spring-demo-aop-after-returning.iml
+src/test/
